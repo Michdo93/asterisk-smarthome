@@ -53,7 +53,7 @@ swapon --show
 ```bash
 sudo apt install -y asterisk
 sudo apt install -y asterisk asterisk-config \
-    python3 python3-pip python3-venv ffmpeg wget curl espeak
+    python3 python3-pip ffmpeg wget curl espeak
 ```
 
 ## 3. Create Smarthome Directory
@@ -345,7 +345,8 @@ Since the Asterisk server typically has no browser, you can run the script on th
 Run the authorization script:
 
 ```bash
-python3 calendar_auth.py
+cd /opt/smarthome
+sudo -u asterisk python3 calendar_auth.py
 ```
 
 This prints a URL (or opens it automatically in your browser). Open it, log in with the Google account added as a **test user** in step 8.3, and grant the requested calendar permission.
@@ -358,7 +359,7 @@ Run `calendar.py` once manually as the `asterisk` user to confirm it can read ca
 
 ```bash
 cd /opt/smarthome
-sudo -u asterisk venv/bin/python3 calendar.py
+sudo -u asterisk python3 calendar.py
 ```
 
 If the token expires and Google requires re-consent, repeat steps 8.5–8.6 to refresh `token.json`.
