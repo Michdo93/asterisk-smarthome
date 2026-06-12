@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+venv/
+.venv/
+
+# Credentials & secrets - NEVER commit these
+credentials.json
+token.json
+*.json.bak
+
+# Asterisk backups
+*.conf.bak
+
+# Audio output / generated files
+*.wav
+*.mp3
+
+# Piper binaries and large model files
+piper/
+piper_linux_x86_64.tar.gz
+*.onnx
+*.onnx.json
+
+# OS / editor files
+.DS_Store
+*.swp
